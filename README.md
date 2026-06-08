@@ -3,13 +3,13 @@
 > Cross-platform TUI framework built from scratch using ANSI escape codes — no Spectre.Console dependency
 
 ## What it does
-A lightweight terminal UI library that renders panels, tables, progress bars, and input prompts entirely via ANSI escape sequences. Handles keyboard input, mouse clicks (xterm), and terminal resize events. Build rich CLI dashboards without pulling in heavy third-party TUI libs.
+A lightweight terminal UI library that renders panels, tables, and progress bars entirely via ANSI escape sequences. Handles keyboard input and produces rich CLI dashboards without pulling in heavy third-party TUI libs.
 
 ## Quick Start
 ```bash
-git clone https://github.com/yourusername/TerminalUI.NET
+git clone https://github.com/MrHassan2027/TerminalUI.NET
 cd TerminalUI.NET
-dotnet run --project TerminalUI.NET.Demo
+dotnet run --project Demo
 ```
 
 ```csharp
@@ -24,11 +24,9 @@ ui.Run();
 ```
 
 ## Features
-- Layout primitives: `Panel`, `Table`, `ProgressBar`, `InputBox`
-- Markup parser: `[red]text[/]`, `[bold]text[/]`, `[bg:blue]text[/]`
-- Keyboard input handling with `KeyPressed` events
-- Mouse support (xterm mouse protocol)
-- Terminal resize detection + re-render
+- Layout primitives: `Panel`, `Table`, `ProgressBar`
+- Markup parser: `[red]text[/]`, `[bold]text[/]`
+- Keyboard input handling
 - Double-buffering to prevent flicker
 
 ## Tech Stack
@@ -42,14 +40,11 @@ ui.Run();
 TerminalUI.NET/
 ├── Core/
 │   ├── TuiApp.cs         # Main render loop
-│   ├── Renderer.cs       # Double-buffer + ANSI writer
-│   └── InputReader.cs    # Keyboard + mouse raw input
+│   └── Renderer.cs       # Double-buffer + ANSI writer
 ├── Widgets/
 │   ├── Panel.cs
 │   ├── Table.cs
-│   ├── ProgressBar.cs
-│   └── InputBox.cs
-├── Markup/
-│   └── MarkupParser.cs   # [color]...[/] tag parser
-└── TerminalUI.NET.Demo/  # Live dashboard demo
+│   └── ProgressBar.cs
+└── Demo/
+    └── Program.cs        # Live dashboard demo
 ```
